@@ -34,7 +34,6 @@
         flavor = "tap-preferred"; \
         tapping-term-ms = <200>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <125>;
         bindings = <&kp>, <&kp>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
     )
