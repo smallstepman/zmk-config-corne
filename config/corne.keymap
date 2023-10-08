@@ -83,7 +83,7 @@ ZMK_COMBO(amps,  &kp AMPS, P_U P_Y, DEF)
 
 ZMK_COMBO(hash,  &kp HASH, P_R P_F, DEF)
 ZMK_COMBO(dolla, &kp DOLLAR, P_F P_T, DEF)
-ZMK_COMBO(perc,  &kp PERCENT, P_F P_D, DEF)
+ZMK_COMBO(perc,  &kp PERCENT, P_F P_P, DEF)
 ZMK_COMBO(caret, &kp CARET, P_N P_U, DEF)
 ZMK_COMBO(star,  &kp STAR, P_U P_I, DEF)
 ZMK_COMBO(pipe,  &kp PIPE, P_Y P_SEMICOLON, DEF)
@@ -92,7 +92,9 @@ ZMK_COMBO(at,    &kp AT, P_R P_W, DEF)
 ZMK_COMBO(media_rewind,     &kp RBRC, P_J P_L, NAV)
 ZMK_COMBO(media_forward,    &kp RBRC, P_Y P_SEMICOLON, NAV)
 ZMK_COMBO(media_play_pause, &kp C_PLAY_PAUSE, P_J P_SEMICOLON, NAV)
-ZMK_COMBO(esc, &kp ESC, P_A P_R, NAV)
+
+ZMK_COMBO(esc, &kp ESC, P_A P_W, ALL)
+ZMK_COMBO(bksp, &kp BKSP, P_S P_E, ALL)
 
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
