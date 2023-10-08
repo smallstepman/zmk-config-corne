@@ -1,20 +1,20 @@
 #pragma once
 // P stands for position
-#define P_Q LT1
-#define P_W LT2
-#define P_F LT3
-#define P_P LT4
-#define P_G LT5
+#define P_Q LT4
+#define P_W LT3
+#define P_F LT2
+#define P_P LT1
+#define P_G LT0
 #define P_J RT0
 #define P_L RT1
 #define P_U RT2
 #define P_Y RT3
 #define P_SEMICOLON RT4
-#define P_A LM1
-#define P_R LM2
+#define P_A LM5
+#define P_R LM4
 #define P_S LM3
-#define P_T LM4
-#define P_D LM5
+#define P_T LM2
+#define P_D LM1
 #define P_H RM0
 #define P_N RM1
 #define P_E RM2

@@ -40,8 +40,8 @@ layers:
   - DEL
   - BKSP
   - {t: TAB, h: fn_layer}
-  - {t: SPACE, h: nav_layer, s: '&dot_spc'}
   - RET
+  - {t: SPACE, h: nav_layer, s: '&dot_spc'}
   - ''''
   nav_layer:
   - ''
@@ -83,8 +83,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   fn_layer:
   - ''
@@ -169,6 +169,70 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+combos:
+- p: [12, 13]
+  k: '{'
+  l: [default_layer]
+- p: [13, 14]
+  k: '['
+  l: [default_layer]
+- p: [14, 15]
+  k: (
+  l: [default_layer]
+- p: [19, 20]
+  k: )
+  l: [default_layer]
+- p: [20, 21]
+  k: ']'
+  l: [default_layer]
+- p: [21, 22]
+  k: '}'
+  l: [default_layer]
+- p: [12, 15]
+  k: '-'
+  l: [default_layer]
+- p: [2, 3]
+  k: '!'
+  l: [default_layer]
+- p: [19, 22]
+  k: +
+  l: [default_layer]
+- p: [8, 9]
+  k: '&'
+  l: [default_layer]
+- p: [13, 3]
+  k: '#'
+  l: [default_layer]
+- p: [3, 15]
+  k: $
+  l: [default_layer]
+- p: [3, 16]
+  k: '%'
+  l: [default_layer]
+- p: [19, 8]
+  k: ^
+  l: [default_layer]
+- p: [8, 21]
+  k: '*'
+  l: [default_layer]
+- p: [9, 10]
+  k: '|'
+  l: [default_layer]
+- p: [13, 2]
+  k: '@'
+  l: [default_layer]
+- p: [6, 7]
+  k: '}'
+  l: [nav_layer]
+- p: [9, 10]
+  k: '}'
+  l: [nav_layer]
+- p: [6, 10]
+  k: PLAY PAUSE
+  l: [nav_layer]
+- p: [12, 13]
+  k: ESC
+  l: [nav_layer]
