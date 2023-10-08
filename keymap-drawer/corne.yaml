@@ -1,0 +1,238 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  default_layer:
+  - ''
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - ''
+  - ''
+  - {t: A, h: LCTRL}
+  - {t: R, h: LGUI}
+  - {t: S, h: LALT}
+  - {t: T, h: LSHFT}
+  - {t: D, h: LCMD}
+  - {t: H, h: RCMD}
+  - {t: N, h: RSHFT}
+  - {t: E, h: RALT}
+  - {t: I, h: RGUI}
+  - {t: O, h: RCTRL}
+  - ''
+  - ''
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - K
+  - M
+  - ','
+  - .
+  - /
+  - ''
+  - DEL
+  - BKSP
+  - {t: TAB, h: fn_layer}
+  - {t: SPACE, h: nav_layer, s: '&dot_spc'}
+  - RET
+  - ''''
+  nav_layer:
+  - ''
+  - OUT TOG
+  - ESC
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - ''
+  - ''
+  - PREV
+  - VOL DN
+  - MUTE
+  - VOL UP
+  - NEXT
+  - PP
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  fn_layer:
+  - ''
+  - F12
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - VOL DN
+  - MUTE
+  - VOL UP
+  - AL LOCK
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - PREV
+  - PP
+  - NEXT
+  - ''
+  - ''
+  - ''
+  - F10
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  system_layer:
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - T
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - BT CLR
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&sys_reset'
+  - '&sys_reset'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [16, 15]
+  k: '{'
+  l: [default_layer]
+- p: [15, 14]
+  k: '['
+  l: [default_layer]
+- p: [14, 13]
+  k: (
+  l: [default_layer]
+- p: [19, 20]
+  k: )
+  l: [default_layer]
+- p: [20, 21]
+  k: ']'
+  l: [default_layer]
+- p: [21, 22]
+  k: '}'
+  l: [default_layer]
+- p: [16, 13]
+  k: '-'
+  l: [default_layer]
+- p: [3, 2]
+  k: '!'
+  l: [default_layer]
+- p: [19, 22]
+  k: +
+  l: [default_layer]
+- p: [8, 9]
+  k: '&'
+  l: [default_layer]
+- p: [15, 2]
+  k: '#'
+  l: [default_layer]
+- p: [2, 13]
+  k: $
+  l: [default_layer]
+- p: [2, 12]
+  k: '%'
+  l: [default_layer]
+- p: [19, 8]
+  k: ^
+  l: [default_layer]
+- p: [8, 21]
+  k: '*'
+  l: [default_layer]
+- p: [9, 10]
+  k: '|'
+  l: [default_layer]
+- p: [15, 3]
+  k: '@'
+  l: [default_layer]
+- p: [6, 7]
+  k: '}'
+  l: [nav_layer]
+- p: [9, 10]
+  k: '}'
+  l: [nav_layer]
+- p: [6, 10]
+  k: PLAY PAUSE
+  l: [nav_layer]
+- p: [16, 15]
+  k: ESC
+  l: [nav_layer]
