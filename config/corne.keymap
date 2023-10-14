@@ -48,7 +48,7 @@ ZMK_BEHAVIOR(tp, hold_tap,
 )
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
-ZMK_BEHAVIOR(lt_spc, hold_tap,
+ZMK_BEHAVIOR(nvsp, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
@@ -63,22 +63,29 @@ ZMK_BEHAVIOR(dot_spc, macro,
     tap-ms = <5>;
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
+/* ZMK_BEHAVIOR(dictation, macro, */
+/*     wait-ms = <0>; */
+/*     tap-ms = <5>; */
+/*     bindings = <&kp LCTRL &kp LCTRL>; */
+/* ) */
 
 // tap: dot | shift + tap: colon
 ZMK_BEHAVIOR(dot_morph, mod_morph,
     bindings = <&kp DOT>, <&kp COLON>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
-ZMK_COMBO(lbrc,  &kp LBRC, P_A P_R, DEF)
-ZMK_COMBO(lbkt,  &kp LBKT, P_R P_S, DEF)
+ZMK_COMBO(lbrc,  &kp LBRC, P_A P_T, DEF)
+ZMK_COMBO(lbkt,  &kp LBKT, P_R P_T, DEF)
 ZMK_COMBO(lpar,  &kp LPAR, P_S P_T, DEF)
 ZMK_COMBO(rpar,  &kp RPAR, P_N P_E, DEF)
-ZMK_COMBO(rbkt,  &kp RBKT, P_E P_I, DEF)
-ZMK_COMBO(rbrc,  &kp RBRC, P_I P_O, DEF)
+ZMK_COMBO(rbkt,  &kp RBKT, P_N P_I, DEF)
+ZMK_COMBO(rbrc,  &kp RBRC, P_N P_O, DEF)
 
-ZMK_COMBO(minus, &kp MINUS, P_A P_T, DEF)
+ZMK_COMBO(ret,   &mt SQT RET, P_I P_O, DEF)
+
+ZMK_COMBO(minus, &kp MINUS, P_R P_S, DEF)
+ZMK_COMBO(plus,  &kp PLUS, P_E P_I, DEF)
 ZMK_COMBO(excl,  &kp EXCL, P_W P_F, DEF)
-ZMK_COMBO(plus,  &kp PLUS, P_N P_O, DEF)
 ZMK_COMBO(amps,  &kp AMPS, P_U P_Y, DEF)
 
 ZMK_COMBO(hash,  &kp HASH, P_R P_F, DEF)
@@ -93,14 +100,29 @@ ZMK_COMBO(media_rewind,     &kp RBRC, P_J P_L, NAV)
 ZMK_COMBO(media_forward,    &kp RBRC, P_Y P_SEMICOLON, NAV)
 ZMK_COMBO(media_play_pause, &kp C_PLAY_PAUSE, P_J P_SEMICOLON, NAV)
 
-ZMK_COMBO(esc, &kp ESC, P_A P_W, ALL)
-ZMK_COMBO(bksp, &kp BKSP, P_S P_E, ALL)
+ZMK_COMBO(esc, &kp ESC, P_A P_R, DEF)
+ZMK_COMBO(esc, &kp ESC, P_A P_R, NAV) // keymap-drawer compalins about "ALL" layer combos
+/* ZMK_COMBO(bksp, &kp BKSP, P_S P_E, DEF) */
+/* ZMK_COMBO(bksp, &kp BKSP, P_S P_E, NAV) */
+
+ZMK_COMBO(one,   &kp N1, P_A P_Z, DEF)
+ZMK_COMBO(two,   &kp N2, P_R P_X, DEF)
+ZMK_COMBO(three, &kp N3, P_S P_C, DEF)
+ZMK_COMBO(four,  &kp N4, P_T P_V, DEF)
+ZMK_COMBO(five,  &kp N5, P_D P_B, DEF)
+ZMK_COMBO(six,   &kp N6, P_H P_K, DEF)
+ZMK_COMBO(seven, &kp N7, P_N P_M, DEF)
+ZMK_COMBO(eight, &kp N8, P_E P_COMMA, DEF)
+ZMK_COMBO(nine,  &kp N9, P_I P_DOT, DEF)
+ZMK_COMBO(zero,  &kp N0, P_O P_SLASH, DEF)
+
 
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
 
 ZMK_CONDITIONAL_LAYER(NAV FUN, SYS)
+
 
 /* keymap */
 ZMK_LAYER(default_layer,
@@ -111,7 +133,7 @@ ZMK_LAYER(default_layer,
       // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
           NONE           &kp Z          &kp X          &kp C          &kp V          &kp B            &kp K          &kp M          &kp COMMA      &kp DOT        &kp FSLH       NONE
       // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╯
-                                                       &kp DEL        &kp BKSP       &tp FUN TAB      &kp RET        &lt_spc NAV DEF &kp SQT
+                                                       &kp SIRI       &tp FUN BKSP   &kp TAB          &kp RET        &nvsp NAV DEF  &kp SQT
       //                                              ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
         )
 
@@ -150,3 +172,104 @@ ZMK_LAYER(system_layer,
                                                        ___            ___            ___              ___            ___            ___
       //                                              ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
           )
+
+
+
+
+/* // buffers, search, workspaces */
+/* #define BKILL                     CA(K)
+/* #define BMAX                      CA(M)
+/* #define BNEXT                     CA(COMMA)
+/* #define BPREV                     CA(DOT)
+/* #define FILESAVE                  LC(S)
+/* #define FILEXP                    CA(N)
+/* #define GOTO                      CA(K)
+/* #define GOTO_X                    CA(SEMI)
+/* #define GOTO_NEXT                 CA(N)
+/* #define GOTO_PREV                 CAS(N)
+/* #define LSPTREE                   CA(O)
+/* #define OSTERM                    LG(LS(RET))
+/* #define VTERM                     CA(E)
+/* #define WKILL                     CA(Q)
+/* #define WORKSPCNXT                CA(A)
+/* #define WORKSPCPRV                CAS(A)
+/* #define WORKSPCKILL               LC(A)
+/* #define SEARCH_PRJ                LA(SLASH)
+/* #define SEARCH_FILE               LA(MINUS)
+/* #define SEARCH_WEB                LA(EQUAL)
+/* // git stuff
+/* #define MAGIT                     CA(G)
+/* #define GITBLAME                  CA(H)
+/* #define GITCOMMIT                 CA(C)
+/* #define GITSMERGE                 CA(A)
+/* #define GITSMERGE_L               CA(RBRC)
+/* #define GITSMERGE_U               CA(LBRC)
+/* #define GITSMERGE_PREV            CA(R)
+/* #define GITSMERGE_NEXT            CA(X)
+/* #define GITFETCHMASTER            CA(SPACE)
+/* #define GITLOG                    CA(Z)
+/* #define GITMERGE                  CA(V)
+/* #define GITPUSH                   CA(P)
+/* #define GITSTAGEFILE              CA(S)
+/* #define GITTIMELINE               CA(T)
+/* #define GITWORKTREE               CA(W)
+/* // LSP stuff
+/* #define LSP_DIAGNOSTIC_POPUP      CA(J)
+/* #define LSP_SHOW_DEFINITION       CA(L)
+/* #define LSP_SHOW_REFERENCE        CA(U)
+/* #define LSP_CODE_ACTIONS          CA(SLASH)
+/* #define LSP_DOCS                  CA(SEMI)
+/* #define LSPOTHERW                 CA(EQUAL)
+/* #define LSP_LIST_SYMBOLS          CA(J)
+/* #define LSP_GOTO_PARENT_MODULE    CA(L)
+/* #define LSP_RUST_EXPAND_MACRO     CA(U)
+/* #define LSP_RUST_EXTERNAL_DOC     CA(Y)
+/* #define LSP_RUST_RELATED_TEST     CA(SEMI)
+/* // tree-sitter code navigation
+/* #define CALL_DN                   CAS(C)
+/* #define CALL_UP                   CA(C)
+/* #define CLASS_DN                  CAS(S)
+/* #define CLASS_UP                  CA(S)
+/* #define COMMENT_DN                CAS(Z)
+/* #define COMMENT_UP                CA(Z)
+/* #define FN_DN                     CAS(F)
+/* #define FN_UP                     CA(F)
+/* #define IF_DN                     CAS(I)
+/* #define IF_UP                     CA(I)
+/* #define LOOP_DN                   CAS(W)
+/* #define LOOP_UP                   CA(W)
+/* #define PARAM_DN                  CAS(P)         // */
+/* #define PARAM_UP                  CA(P)          // */
+/* #define PARAG_DN                  CAS(G)         // */
+/* #define PARAG_UP                  CA(G)          // */
+/* #define PG_DN_OW                  CAS(O)         // */
+/* #define PG_UP_OW                  CA(O)          // */
+/* // media
+/* #define FORWARD_FAST             S(C_FAST_FORWARD)
+/* #define BACKWARD_FAST            S(C_REWIND)
+/* #define FORWARD_FAST             LA(C_FAST_FORWARD)
+/* #define BACKWARD_FAST            LA(C_REWIND)
+/* #define FORWARD                  C_FAST_FORWARD
+/* #define BACKWARD                 C_REWIND
+
+/* TAP_OR_COLLAPSE(toc_workspace_next_or_kill, &collapsed_workspace_kill, &kp) */
+
+/* TAPDANCE(slashes, <&kp SLASH>, <&kp BACKSLASH>, <&kp PIPE>) */
+/* TAPDANCE(sound, <&lt L_MEDIA K_MUTE>, <&mt C_VOLUME_UP C_PLAY_PAUSE>, <&mt C_FAST_FORWARD C_NEXT>, <&mt C_REWIND C_PREVIOUS>) */
+/* TAPDANCE(git, <&lt L_GIT MAGIT>, <&kp GITBLAME>) */
+/* TAPDANCE(terminal, <&kp VTERM>, <&collapsed_osterm>) */
+/* TAPDANCE(workspace, <&toc_workspace_next_or_kill 0 WORKSPCNXT>, <&kp WORKSPCPRV>) */
+/* TAPDANCE(lsp_list, <&kp LSP_DIAGNOSTIC_POPUP>, <&kp LSP_LIST_SYMBOLS>) */
+/* TAPDANCE(lsp_def, <&kp LSP_SHOW_DEFINITION>, <&kp LSP_GOTO_PARENT_MODULE>) */
+/* TAPDANCE(lsp_ref, <&kp LSP_SHOW_REFERENCE>, <&kp LSP_RUST_EXPAND_MACRO>) */
+/* TAPDANCE(lsp_act, <&kp LSP_CODE_ACTIONS>, <&kp LSP_RUST_RELATED_TEST>) */
+/* TAPDANCE(lsp_doc, <&kp LSP_DOCS>, <&kp LSP_RUST_EXTERNAL_DOC>) */
+
+/* // https://gist.github.com/urob/68a1e206b2356a01b876ed02d3f542c7 */
+/* macros { */
+/*     COLLAPSED_KEY(collapsed_osterm, OSTERM) */
+/*     COLLAPSED_KEY(collapsed_workspace_kill, WORKSPCKILL) */
+/* }; */
+
+/* ZMK_COMBO(sar, &caps_word, P_T P_N, DEF) */
+/* COMBO(caa, <LT0 LM0>, &kp GRAVE) */
